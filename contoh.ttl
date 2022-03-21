@@ -1,0 +1,59 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dosen: <http://ukdw.ac.id/rdf/dosen#> .
+@prefix mhs: <http://ukdw.ac.id/rdf/mahasiswa#> .
+@prefix ict: <http://ti.ukdw.ac.id/ontology/ict_taxonomy#> .
+
+dosen:Dosen rdf:type foaf:Person .
+mhs:Mahasiswa rdf:type foaf:Person .
+
+dosen:budsus rdf:type dosen:Dosen ;
+   	          foaf:name "Budi Susanto" ;
+             foaf:age "60" .
+
+dosen:nila rdf:type dosen:Dosen ;
+           foaf:name "Maria Nila"@id ;
+           foaf:age "30" .
+
+mhs:jessyln rdf:type mhs:Mahasiswa ;
+            foaf:name "Jesslyn Kesuma"@id ;
+            foaf:age "18" .
+
+mhs:petrick rdf:type mhs:Mahasiswa ;
+            foaf:name "Petrick Rumtutuli"@id ;
+            foaf:age "22" ;
+		foaf:mbox "petric@ti.ukdw.ac.id" ;
+		foaf:topic_interest "UIX".
+
+mhs:mikel rdf:type mhs:Mahasiswa ;
+            foaf:name "Mikhael Louis"@id ;
+            foaf:age "23" ;
+		foaf:mbox "mikel@ti.ukdw.ac.id" ;
+		foaf:topic_interest "UIX".
+
+mhs:alfa rdf:type mhs:Mahasiswa ;
+            foaf:name "Alfariel Tulus"@id ;
+            foaf:age "21" ;
+		foaf:mbox "alfa@ti.ukdw.ac.id" ;
+		foaf:topic_interest "UIX".
+
+mhs:milano rdf:type mhs:Mahasiswa ;
+            foaf:name "Milano Noija"@id ;
+            foaf:age "21" ;
+		foaf:mbox "milano@ti.ukdw.ac.id" ;
+		foaf:topic_interest "UIX".
+
+dosen:budsus foaf:knows dosen:nila .
+dosen:budsus foaf:knows mhs:jessyln .
+mhs:petrick foaf:knows mhs:mikel .
+mhs:petrick foaf:knows mhs:alfa .
+mhs:petrick foaf:knows mhs:milano .
+mhs:mikel foaf:knows mhs:alfa .
+mhs:mikel foaf:knows mhs:milano .
+mhs:mikel foaf:knows mhs:petrick .
+mhs:alfa foaf:knows mhs:milano .
+mhs:alfa foaf:knows mhs:petrick .
+mhs:alfa foaf:knows mhs:mikel .
+mhs:milano foaf:knows mhs:petrick .
+mhs:milano foaf:knows mhs:mikel .
+mhs:milano foaf:knows mhs:alfa .
